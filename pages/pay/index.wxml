@@ -1,0 +1,17 @@
+<view class="content" wx:if="{{!isPay}}">
+    <view class="pay">
+        <text>人民币: ¥ {{price}}</text>
+        <form report-submit="true" bindsubmit="payTest">
+            <button type="primary" form-type="submit" wx:if="{{isShow}}">微信支付</button>
+            <button type="primary" wx:else="">支付中...</button>
+        </form>
+    </view>
+</view>
+<view class="content" wx:else="">
+    <view class="pay_success">
+        <view class="icon">
+            <icon type="success" size="60" color="#19be6b"></icon>
+        </view>
+        <text>支付成功</text>
+    </view>
+</view>
